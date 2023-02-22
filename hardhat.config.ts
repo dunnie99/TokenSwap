@@ -6,11 +6,16 @@ dotenv.config();
 const config: HardhatUserConfig = {
   solidity: "0.8.17",
   networks: {
-    hardhat: {},
+    hardhat: {
+      forking: {
+        enabled: true,
+        url: "https://eth-mainnet.g.alchemy.com/v2/_iScTTmFgRiz_2zUUhQXVT1LAxBBxuSP"
+      }
+    },
     goerli: {
       url: process.env.Goerli_rpc,
       //@ts-ignore
-      accounts: [process.env.Private_Key,process.env.Private_Key2],
+      accounts: [process.env.Private_Key],
     },
   },
   etherscan:{

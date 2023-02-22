@@ -22,7 +22,7 @@ contract tokenSwapping {
     constructor(){
         DAI = IToken(0x6B175474E89094C44Da98b954EedeAC495271d0F);
         LINK = IToken(0x514910771AF9Ca656af840dff83E8264EcF986CA);
-        USDC = IToken(0x7EA2be2df7BA6E54B1A9C70676f668455E329d29);
+        USDC = IToken(0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48);
         Owner = msg.sender;
     }
 
@@ -81,7 +81,7 @@ contract tokenSwapping {
     }
 
 
-    function swapDAILINK(uint _amount) external returns(bool) {
+    function swapDAILINK(uint _amount) external {
         require(_amount > 0, "Insufficient Dai");
         bool status = transferFrom_(DAI, msg.sender, int (_amount));
         require(status, "Insufficient liquidity");
@@ -153,7 +153,7 @@ contract tokenSwapping {
 // WITHDRAW AND BALANCEOF CONTRACT TOKENS.
 
 
-    function balanceOf_(IToken _token) public returns(uint){
+    function balanceOf_(IToken _token) public view returns(uint){
         uint tokenBalance = _token.balanceOf(address(this));
         return tokenBalance;
     }
