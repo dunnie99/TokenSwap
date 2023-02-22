@@ -1,4 +1,6 @@
 import { ethers } from "hardhat";
+import { BigNumber } from "ethers";
+import { providers } from "ethers";
 
 async function main() {
     /// contract addresses
@@ -25,16 +27,32 @@ async function main() {
     await helper3.impersonateAccount(UsdcHolder);
     const impersonatedSigner3 = await ethers.getSigner(UsdcHolder);
     
-/// deploying contract
+/// deploying tokenSwap contract
     const tokenSwap = await ethers.getContractFactory("tokenSwapping");
     const TokenSwap = await tokenSwap.deploy();
     await TokenSwap.deployed();
     console.log(`TokenSwapping Address is ${TokenSwap.address}`);
 
-
+///getting all token contract address.
     const DaiContract = await ethers.getContractAt("IToken", DAI);
     const LinkContract = await ethers.getContractAt("IToken", LINK);
     const UsdcContract = await ethers.getContractAt("IToken", USDC);
+
+
+///checking the balanceOf token holders
+
+    const daiBalance = await DaiContract.balanceOf(daiHolder);
+    console.log(`daiBalance ${daiBalance}`);
+
+    const linkBalance = await LinkContract.balanceOf(LinkHolder);
+    console.log(`LinkBalance ${linkBalance}`);
+
+    const usdcBalance = await UsdcContract.balanceOf(UsdcHolder);
+    console.log(`usdcBalance ${usdcBalance}`);
+
+
+
+
 
 
 
