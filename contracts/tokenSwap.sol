@@ -8,10 +8,10 @@ import "@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol";
 contract tokenSwapping {
 
 
-    AggregatorV3Interface ETHUSD = AggregatorV3Interface(0xA39434A63A52E749F02807ae27335515BA4b07F7);
-    AggregatorV3Interface DAIUSD = AggregatorV3Interface(0x0d79df66BE487753B02D015Fb622DED7f0E9798d);
-    AggregatorV3Interface LINKUSD = AggregatorV3Interface(0x48731cF7e84dc94C5f84577882c14Be11a5B7456);
-    AggregatorV3Interface USDCUSD = AggregatorV3Interface(0xAb5c49580294Aff77670F839ea425f5b78ab3Ae7);
+    AggregatorV3Interface ETHUSD = AggregatorV3Interface(0xD4a33860578De61DBAbDc8BFdb98FD742fA7028e);
+    AggregatorV3Interface DAIUSD = AggregatorV3Interface(0xAed0c38402a5d19df6E4c03F4E2DceD6e29c1ee9);
+    AggregatorV3Interface LINKUSD = AggregatorV3Interface(0x2c1d072e956AFFC0D435Cb7AC38EF18d24d9127c);
+    AggregatorV3Interface USDCUSD = AggregatorV3Interface(0x8fFfFfd4AfB6115b954Bd326cbe7B4BA576818f6);
     
     address Owner;
     IToken internal DAI;
