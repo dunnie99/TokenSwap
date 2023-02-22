@@ -25,12 +25,16 @@ async function main() {
     await helper3.impersonateAccount(UsdcHolder);
     const impersonatedSigner3 = await ethers.getSigner(UsdcHolder);
     
-
+/// deploying contract
     const tokenSwap = await ethers.getContractFactory("tokenSwapping");
     const TokenSwap = await tokenSwap.deploy();
     await TokenSwap.deployed();
     console.log(`TokenSwapping Address is ${TokenSwap.address}`);
 
+
+    const DaiContract = await ethers.getContractAt("IToken", DAI);
+    const LinkContract = await ethers.getContractAt("IToken", LINK);
+    const UsdcContract = await ethers.getContractAt("IToken", USDC);
 
 
 
