@@ -50,6 +50,19 @@ async function main() {
     const usdcBalance = await UsdcContract.balanceOf(UsdcHolder);
     console.log(`usdcBalance ${usdcBalance}`);
 
+/// setBalance
+
+    await helper1.setBalance(daiHolder, 10000000000000000000000000);
+    await helper2.setBalance(LinkHolder, 10000000000000000000000000);
+    await helper3.setBalance(UsdcHolder, 10000000000000000000000000);    
+
+///Approving contract to spend token
+// 666 532 251 525 266 654
+    await DaiContract.connect(impersonatedSigner1).approve(TokenSwap.address, 2000);
+    await LinkContract.connect(impersonatedSigner2).approve(TokenSwap.address, 2000);
+    await UsdcContract.connect(impersonatedSigner3).approve(TokenSwap.address, 2000);
+
+
 
 
 
