@@ -97,6 +97,22 @@ async function main() {
 
     const uniHolderDaiBalanceAfter = await DaiContract.balanceOf(UniHolder);
     console.log(`uniHolderDaiBalance ${uniHolderDaiBalanceAfter}`);
+    console.log("ETH TO DAI Swapping successfully");
+
+
+// SWAP ETH TO UNI
+
+
+    const DaiHolderUniBalanceBefore = await    UniContract.balanceOf(daiHolder);
+    console.log(`DaiHolderUniBalance ${DaiHolderUniBalanceBefore}`);
+    const ethSent = await ethers.utils.parseEther("0.20");
+    const swapEthToUni = await TokenSwap.connect(impersonatedSigner1).swapETHUNI({
+        value: ethSent,
+    });
+
+    const uniHolderBalanceAfter = await UniContract.balanceOf(daiHolder);
+    console.log(`uniHolderDaiBalance ${uniHolderBalanceAfter}`);
+    console.log("ETH TO UNI Swapping successfully")
 
     
 

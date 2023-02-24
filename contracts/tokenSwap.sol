@@ -67,7 +67,7 @@ contract tokenSwapping {
         require(msg.value > 0, "Insufficient Ether");
         int ethPrice = getPrice(ETHUSD, tokenDecimal);
         int daiPrice = getPrice(DAIUSD, tokenDecimal);
-        int daiOut = ((int(msg.value) * ethPrice) / daiPrice);
+        int daiOut = ((int(msg.value) * ethPrice) / 1);
         transfer_(DAI, daiOut, msg.sender);
          
     }
