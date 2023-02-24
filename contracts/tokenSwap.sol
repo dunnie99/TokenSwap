@@ -53,14 +53,14 @@ contract tokenSwapping {
     //     require(amount1 > 0 && amount2 > 0, "Insufficient amount");
     // }
 
-    function swapETHUSDC() payable external {
-        require(msg.value > 0, "Insufficient Ether");
-        int ethPrice = getPrice(ETHUSD, tokenDecimal);
-        int usdcPrice = getPrice(USDCUSD, tokenDecimal);
-        int usdcOut = ((int(msg.value) * ethPrice) / usdcPrice);
-        transfer_(USDC, usdcOut, msg.sender);
+    // function swapETHUSDC() payable external {
+    //     require(msg.value > 0, "Insufficient Ether");
+    //     int ethPrice = getPrice(ETHUSD, tokenDecimal);
+    //     int usdcPrice = getPrice(USDCUSD, tokenDecimal);
+    //     int usdcOut = ((int(msg.value) * ethPrice) / usdcPrice);
+    //     transfer_(USDC, usdcOut, msg.sender);
          
-    }
+    // }
 
     function swapETHDAI() payable external {
         require(msg.value > 0, "Insufficient Ether");
@@ -104,50 +104,50 @@ contract tokenSwapping {
          
     }
 
-    function swapUSDCDAI(uint _amount) payable external {
-        require(_amount > 0, "Insufficient USDC");
-        bool status = transferFrom_(USDC, msg.sender, int (_amount));
-        require(status, "Insufficient liquidity");
-        int usdcPrice = getPrice(USDCUSD, tokenDecimal);
-        int daiPrice = getPrice(DAIUSD, tokenDecimal);
-        int daiOut = ((int(_amount) * usdcPrice) / daiPrice);
-        transfer_(DAI, daiOut, msg.sender);
+    // function swapUSDCDAI(uint _amount) payable external {
+    //     require(_amount > 0, "Insufficient USDC");
+    //     bool status = transferFrom_(USDC, msg.sender, int (_amount));
+    //     require(status, "Insufficient liquidity");
+    //     int usdcPrice = getPrice(USDCUSD, tokenDecimal);
+    //     int daiPrice = getPrice(DAIUSD, tokenDecimal);
+    //     int daiOut = ((int(_amount) * usdcPrice) / daiPrice);
+    //     transfer_(DAI, daiOut, msg.sender);
          
-    }
+    // }
 
-    function swapDAIUSDC(uint _amount) payable external {
-        require(_amount > 0, "Insufficient DAI");
-        bool status = transferFrom_(DAI, msg.sender, int (_amount));
-        require(status, "Insufficient liquidity");
-        int daiPrice = getPrice(DAIUSD, tokenDecimal);
-        int usdcPrice = getPrice(USDCUSD, tokenDecimal);
-        int usdcOut = ((int(_amount) * daiPrice) / usdcPrice);
-        transfer_(USDC, usdcOut, msg.sender);
+    // function swapDAIUSDC(uint _amount) payable external {
+    //     require(_amount > 0, "Insufficient DAI");
+    //     bool status = transferFrom_(DAI, msg.sender, int (_amount));
+    //     require(status, "Insufficient liquidity");
+    //     int daiPrice = getPrice(DAIUSD, tokenDecimal);
+    //     int usdcPrice = getPrice(USDCUSD, tokenDecimal);
+    //     int usdcOut = ((int(_amount) * daiPrice) / usdcPrice);
+    //     transfer_(USDC, usdcOut, msg.sender);
          
-    }
+    // }
 
 
-    function swapLINKUSDC(uint _amount) payable external {
-        require(_amount > 0, "Insufficient Link");
-        bool status = transferFrom_(LINK, msg.sender, int (_amount));
-        require(status, "Insufficient liquidity");
-        int linkPrice = getPrice(LINKUSD, tokenDecimal);
-        int usdcPrice = getPrice(USDCUSD, tokenDecimal);
-        int usdcOut = ((int(_amount) * linkPrice) / usdcPrice);
-        transfer_(USDC, usdcOut, msg.sender);
+    // function swapLINKUSDC(uint _amount) payable external {
+    //     require(_amount > 0, "Insufficient Link");
+    //     bool status = transferFrom_(LINK, msg.sender, int (_amount));
+    //     require(status, "Insufficient liquidity");
+    //     int linkPrice = getPrice(LINKUSD, tokenDecimal);
+    //     int usdcPrice = getPrice(USDCUSD, tokenDecimal);
+    //     int usdcOut = ((int(_amount) * linkPrice) / usdcPrice);
+    //     transfer_(USDC, usdcOut, msg.sender);
          
-    }
+    //}
 
-    function swapUSDCLINK(uint _amount) payable external {
-        require(_amount > 0, "Insufficient USDC");
-        bool status = transferFrom_(USDC, msg.sender, int (_amount));
-        require(status, "Insufficient liquidity");
-        int usdcPrice = getPrice(USDCUSD, tokenDecimal);
-        int linkPrice = getPrice(LINKUSD, tokenDecimal);
-        int linkOut = ((int(_amount) * usdcPrice) / linkPrice);
-        transfer_(LINK, linkOut, msg.sender);
+    // function swapUSDCLINK(uint _amount) payable external {
+    //     require(_amount > 0, "Insufficient USDC");
+    //     bool status = transferFrom_(USDC, msg.sender, int (_amount));
+    //     require(status, "Insufficient liquidity");
+    //     int usdcPrice = getPrice(USDCUSD, tokenDecimal);
+    //     int linkPrice = getPrice(LINKUSD, tokenDecimal);
+    //     int linkOut = ((int(_amount) * usdcPrice) / linkPrice);
+    //     transfer_(LINK, linkOut, msg.sender);
          
-    }
+    // }
 
 
 // WITHDRAW AND BALANCEOF CONTRACT TOKENS.
