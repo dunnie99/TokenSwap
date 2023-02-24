@@ -84,8 +84,19 @@ async function main() {
     // console.log(`Contract USDC balance is ${UsdcContractBalance}`);
 
 
+    //// SWAPPING ETH AND TOKENS
 
-/// 
+///  SWAP ETH to DAI
+//check uniHolder DAIbalance
+    const uniHolderDaiBalance = await DaiContract.balanceOf(UniHolder);
+    console.log(`uniHolderDaiBalance ${uniHolderDaiBalance}`);
+    const sent = await ethers.utils.parseEther("0.10");
+    const swapEthToDai = await TokenSwap.connect(impersonatedSigner2).swapETHDAI({
+        value: sent,
+    });
+
+    const uniHolderDaiBalanceAfter = await DaiContract.balanceOf(UniHolder);
+    console.log(`uniHolderDaiBalance ${uniHolderDaiBalanceAfter}`);
 
     
 

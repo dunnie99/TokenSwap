@@ -8,7 +8,7 @@ import "@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol";
 contract tokenSwapping {
 
 
-    AggregatorV3Interface ETHUSD = AggregatorV3Interface(0xD4a33860578De61DBAbDc8BFdb98FD742fA7028e);
+    AggregatorV3Interface ETHUSD = AggregatorV3Interface(0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419);
     AggregatorV3Interface DAIUSD = AggregatorV3Interface(0xAed0c38402a5d19df6E4c03F4E2DceD6e29c1ee9);
     AggregatorV3Interface UNIUSD = AggregatorV3Interface(0x553303d460EE0afB37EdFf9bE42922D8FF63220e);
     //AggregatorV3Interface USDCUSD = AggregatorV3Interface(0x8fFfFfd4AfB6115b954Bd326cbe7B4BA576818f6);
