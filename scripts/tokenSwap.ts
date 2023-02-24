@@ -44,10 +44,10 @@ async function main() {
 ///checking the balanceOf token holders
 
     const daiHolderBalance = await DaiContract.balanceOf(daiHolder);
-    console.log(`daiBalance ${daiHolderBalance}`);
+    console.log(`daiHolderBalance ${daiHolderBalance}`);
 
     const uniHolderBalance = await UniContract.balanceOf(UniHolder);
-    console.log(`LinkBalance ${uniHolderBalance}`);
+    console.log(`uniHolderBalance ${uniHolderBalance}`);
 
     // const usdcHolderBalance = await UsdcContract.balanceOf(UsdcHolder);
     // console.log(`usdcBalance ${usdcHolderBalance}`);
@@ -85,7 +85,7 @@ async function main() {
 
 
 
-/// check Contract balance
+/// 
 
     
 
